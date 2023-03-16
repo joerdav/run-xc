@@ -1,0 +1,27 @@
+name: "Run xc"
+description: "Run xc tasks"
+author: "joerdav"
+branding:
+  icon: terminal
+  color: black
+inputs:
+  version:
+    description: The xc version to setup. Must be a valid semantic version string like "v0.4.0" or "latest"
+    required: true
+    default: latest
+  task:
+    description: The xc task to run.
+    required: true
+  inputs:
+    description: The xc inputs to pass to the task.
+runs:
+  using: "composite"
+  steps:
+    - name: Use XC
+      id: use_xc
+      uses: joerdav/setup-xc@v0.0.2
+      with:
+        version: ${{ inputs.version }}
+    - name: Run ${{ inputs.task }}
+      env: ${{ fromJson(inputs.inputs) }}
+      run: ${{ steps.use_xc.outputs.xc-path }} ${{ inputs.task }}
