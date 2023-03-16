@@ -23,5 +23,6 @@ runs:
       with:
         version: ${{ inputs.version }}
     - name: Run ${{ inputs.task }}
+      shell: bash
       env: ${{ fromJson(inputs.inputs) }}
       run: ${{ steps.use_xc.outputs.xc-path }} ${{ inputs.task }}
