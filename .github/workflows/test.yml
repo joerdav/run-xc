@@ -18,4 +18,4 @@ jobs:
         with:
           task: test
           xc_inputs: |
-            IN: some_input
+            IN=some_input

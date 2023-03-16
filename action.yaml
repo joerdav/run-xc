@@ -13,7 +13,9 @@ inputs:
     description: The xc task to run.
     required: true
   xc_inputs:
-    description: The xc inputs to pass to the task.
+    description: |
+      The xc inputs to pass to the task.
+      INP1=inp1 INP2=inp2
 runs:
   using: "composite"
   steps:
@@ -24,4 +26,4 @@ runs:
         version: ${{ inputs.version }}
     - name: Run ${{ inputs.task }}
       shell: bash
-      run: ${{ steps.use_xc.outputs.xc-path }} ${{ inputs.task }}
+      run: ${{inputs.xc_inputs}} ${{ steps.use_xc.outputs.xc-path }} ${{ inputs.task }}
