@@ -24,5 +24,4 @@ runs:
         version: ${{ inputs.version }}
     - name: Run ${{ inputs.task }}
       shell: bash
-      env: ${{ fromJson(inputs.xc_inputs) }}
       run: ${{ steps.use_xc.outputs.xc-path }} ${{ inputs.task }}
