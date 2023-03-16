@@ -17,5 +17,4 @@ jobs:
         uses: ./
         with:
           task: test
-          xc_inputs: |
-            IN=some_input
+          xc_inputs: IN=some_input
