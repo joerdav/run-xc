@@ -85,7 +85,7 @@ else
   exit 1
 fi
 
-NEW_TAG="v$VNUM1.$VNUM2.$VNUM3"
+NEW_TAG="$VNUM1.$VNUM2.$VNUM3"
 
 echo Adding git tag with version ${NEW_TAG}
 git tag ${NEW_TAG}
