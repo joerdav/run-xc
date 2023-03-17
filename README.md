@@ -17,6 +17,7 @@ jobs:
     - uses: joerdav/run-xc@v0.0.1
       with:
         task: "test"
+        xc_inputs: IN=some_input
 ```
 
 ## Tasks
