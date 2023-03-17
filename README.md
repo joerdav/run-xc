@@ -15,9 +15,10 @@ jobs:
       with:
         fetch-depth: 1
     - uses: joerdav/run-xc@v0.0.1
+      env:
+        IN: some_input
       with:
         task: "test"
-        xc_inputs: IN=some_input
 ```
 
 ## Options
@@ -34,13 +35,9 @@ The default is `latest`.
 
 The name of the [xc](https://xcfile.dev) task to run.
 
-### `xc_inputs`
+### `env`
 
-The xc inputs to pass to the task.
-
-Should be passed as an environment variable string such as:
-
-`INP1=inp1 INP2=inp2`
+Use github action environment variables to define xc task inputs.
 
 ## Tasks
 
