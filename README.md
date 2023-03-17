@@ -20,6 +20,28 @@ jobs:
         xc_inputs: IN=some_input
 ```
 
+## Options
+
+### `version`
+
+The [xc](https://xcfile.dev) version to setup. Must be a valid semantic version string like `v0.0.1` or `latest`.
+
+The default is `latest`.
+
+[joerdav/setup-xc](https://github.com/joerdav/setup-xc) will be used to install this version of [xc](https://xcfile.dev).
+
+### `task`
+
+The name of the [xc](https://xcfile.dev) task to run.
+
+### `xc_inputs`
+
+The xc inputs to pass to the task.
+
+Should be passed as an environment variable string such as:
+
+`INP1=inp1 INP2=inp2`
+
 ## Tasks
 
 ### test
