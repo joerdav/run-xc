@@ -17,7 +17,7 @@ runs:
   steps:
     - name: Use XC
       id: use_xc
-      uses: joerdav/setup-xc@v0.0.2
+      uses: joerdav/setup-xc@v1
       with:
         version: ${{ inputs.version }}
     - name: Run ${{ inputs.task }}
